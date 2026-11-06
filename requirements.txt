@@ -1,0 +1,13 @@
+# 运行 code/example_run.py（最小示例）与读取 results/ 所需的核心依赖，版本固定
+numpy==2.3.5
+scipy==1.18.1
+pandas==3.0.1
+
+# 完整复现实验（code/run_*.py、diagnostics.py、make_figures.py 等）另需：
+# scikit-learn   # GBLUP 交叉验证、指标与数据预处理
+# matplotlib     # figures/ 下的全部插图
+# lightgbm       # run_hgb.py 的 HGB 非线性下游模型
+# pyreadr        # 读取 BGLR 自带的 mice/wheat .rda 原始数据
+#
+# 安装：python -m pip install -r requirements.txt
+#      完整实验：python -m pip install scikit-learn matplotlib lightgbm pyreadr

@@ -1,0 +1,30 @@
+A-PCS 示例运行摘要
+生成时间：2026-11-06 23:49:53
+
+【输入】
+基因型：data\sample\matrix.csv（200 样本 × 2000 标记）
+表型：data\sample\phenotype.csv（200 样本）
+位置：data\sample\positions.csv（2000 标记，2 条染色体）
+
+【参数】
+W = 100,000 bp
+q = 0.1
+b = 0.7
+t_col_min = 0.5，t_col_max = 0.9
+质控：MAF >= 0.05，缺失率 <= 20%
+
+【结果】
+原始标记数：2000
+质控后标记数：1994（剔除 6）
+保留标记数：78
+压缩比：25.6×
+总耗时：0.20 秒
+保留标记 |r| 范围：0.118 – 0.284，p 值最小 4.48e-05
+
+【LD 景观】
+窗口数：20，最终窗口宽度：100,000 bp
+L 范围：0.001 – 0.999
+
+【输出文件】
+selected_markers.csv：marker, chrom, pos, abs_r, p_value（78 行，按 abs_r 降序）
+ld_landscape.png：L(p) 与准入阈值 q·(1−bL)、去重阈值 t_col(p) 三条曲线（pillow 渲染）
